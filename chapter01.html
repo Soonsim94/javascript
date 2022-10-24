@@ -7,26 +7,21 @@
     <title>print</title>
 </head>
 <body>
-    <!-- html 태그 주석 -->
-    <script> //위에서 아래로 차례로 인식 **순서 매우 중요**
-        let sign = prompt("당신의 별자리는 무엇입니까?"); 
-        //첫번째 let 괄호안의 내용을 텍스트로 팝업창 띄움
-        //변수(sign) : 껍데기(출력되지는 않음) / 어떤데이터(성질)를 넣냐에 따라 어떤역할을 하는지 달라짐 
-        //ex)문자를 넣으면 문자데이터,숫자를 넣으면 숫자데이터
-        //let(성질) : 데이터를 담는 변수 (미리 담지않으면 인식이 x) /sign(변수)
-        //var(성질) : 데이터를 담는 변수 / 위에있든 어디있든 선언이 가능 (미리 담지않아도 인식 o) 
-        //*위험해서 왠만하면 쓰지않음*  호스팅을 통해 가져와서 쓸수있긴함. 
-        //const 는 한번 정해지면 끝 ( 데이터 변경할수 없음 오류 뜸 ) 한번하고 변경하지 않아도 되는곳에 적용 
+    <!--html 태그 주석-->
+    <script>
+        let sign = prompt("당신의 별자리는 무엇입니까?");
         if(sign.toLowerCase() === "전갈자리"){
-            alert("저도 전갈자리입니다!"); //제어문이라고도 함 
+            alert("저도 전갈자리입니다!");
         }
-        sign = window.prompt();  
-        sing = prompt();
-        console.log(sign); 
-        sign = window.prompt("오늘 너무 춥습니까?", "네"); //콤마를 기준으로 앞은 질문, 뒤는 대답
-        document.write("<input type=input value='123'>"); //화면안에 출력할때 쓰는 기능
-        let str = "<input type=input value='123'>";
+        sign = window.prompt();
+        sign = prompt();
+        console.log(sign);
+        sign = window.prompt("오늘 너무 춥습니까?", "네");
+        document.write("<input type=input value='123'>");
+        let str = "<input type=input value='123'><br>";
         str += "<h1>테스트</h1>";
-    </script>   
+
+    </script>
+
 </body>
 </html>

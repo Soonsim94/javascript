@@ -9,14 +9,14 @@
 <body>
     <script>
     // let walkAmount = prompt("하루에 걷는 양은 몇 보?");
-    
+
     // if(walkAmount > 10000){
     //     document.write("아주 훌륭합니다.<br>");
     // }
 
-    // let userName = prompt("방문자의 이름은?"); 
+    // let userName = prompt("방문자의 이름은?");
 
-    // if(usertName !== "smith"){ 
+    // if(userName != "smith"){
     //     document.write(userName + "님 반갑습니다.");
     // }
 
@@ -27,11 +27,11 @@
     //     alert("탈퇴 처리 취소");
     // }
 
-    //간단한 ID / PW 확인 절차.
+    //간단한 ID / PW 확인 절차
     let id = "yedam";
     let pw = "1234";
 
-    let userId = prompt("아이디는?");  //페이지 재시작 구간 
+    let userId = prompt("아이디는?");
     let userPw = prompt("비밀번호는?");
 
     if(id == userId){
@@ -41,7 +41,7 @@
             alert(userId + "님 비밀번호가 틀렸습니다.");
             location.reload(); //페이지 재시작
         }
-    }else {
+    } else {
         alert("아이디가 틀렸습니다.");
         location.reload(); //페이지 재시작
     }
