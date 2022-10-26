@@ -1,0 +1,25 @@
+☆★☆★Event 정리☆★☆★
+
+1) addEventListener
+-> DOM객체.addEventListener(동작,함수)
+
+2) Tag onclick, onsubmit 적용
+-> <tag onclick="함수">
+-> 해당 tag click시 함수가 작동(이벤트 발생)
+-> form tag : return 가진 함수(T/F -> submit 작동)
+
+3) Tag onclick, onsubmit 적용
+-> <tag onclick = "바로 실행 될 기능">
+
+4) <script> 영역에 on 사용하여 Event 적용
+-> 1. <script> 영역에서 DOM객체를 불러옵니다.
+-> 2. 불러온 DOM객체.onclick or onsumbit 이벤트 추가
+-> 3. onclick = function(){ //익명 함수로 기능을 구현
+                 기능기능기능
+                }
+
+
+
+
+
+
