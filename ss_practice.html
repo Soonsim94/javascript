@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            background: coral;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+       <script>
+    //    let spanTag = document.createElement('ulapp');
+
+    //    console.log('ulapp');
+
+    //    let div = document.getElementById('li');
+
+    //    spanTag.textContent = 'h2 텍스트입니다.';
+
+    //    console.log(div);
+        //자바스크립트요소만들기
+        //ul,li 요소제작
+        //ul element 생성 
+        let ul = document.createElement('ul');
+        //반복문을 활용해서 li요소 만들기.     
+        for(let i = 0; i<=3; i++){
+        //li요소 만들기
+            let li = document.createElement('li');
+            li.classList.add('liclass');
+            li.textContent = "텍스트"+i;
+            ul.appendChild(li);
+        }
+        //div태그를 ID를 가지고 가져오는 방법. 
+        document.getElementById('app').appendChild(ul)
+
+        let span = document.createElement('span');
+        span.setAttribute('class','red');
+        span.setAttribute('id','sp1');
+        span.textContent = 'span입니다.';
+
+        console.log(span);
+
+        let h2 = document.createElement('h2');
+        h2.textContent = "h2 텍스트 입니다."
+        
+
+        let img = document.createElement('img');
+        img.setAttribute('src','미소강아지.jpg');
+        img.setAttribute('alt','이미지를 불러올수 없습니다.');
+        img.setAttribute('style','height:100px');
+
+
+        //div 태그를 id를 가지고 가져오는 방법. 
+        //span, h2, img, ul~li
+
+        let div = document.getElementById('app');
+        //하나의 자식만 추가할때 사용하는 함수
+        // div.appendChild(span);
+        // div.appendChild(h2);
+        // div.appendChild(img);
+        // div.appendChild(ul);
+        //여러자식들을 추가 할때 사용하는 함수 
+        div.append(span,h2,img,ul);
+
+        let removeSpan = document.getElementById('sp1');
+        removeSpan.remove();    //내자신의 요소 지울때 
+        
+    </script>   
+
+   
+
+    </div>
+</body>
+</html>

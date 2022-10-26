@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="txtWord">
+    <button type="button" id="btnAdd" onclick="pAdd()">추가</button>
+    
+    <p class="word">list</p>
+    <p class="word">nice</p>
+    <p class="word">good</p>
+    <p class="word">very</p>
+    <script>
+        // let btn = document.querySelector('#')
+        
+        
+        //버튼 클릭시, p tag가 생성, 추가되도록 만들어본다.
+        //input 태그에 있는 데이터를 추가하여서 생성.  
+        function pAdd(){ 
+            const p = document.createElement('p');  //온클릭 padd추가 버튼을 누르먄 펑션 padd로 이동
+                                                    //변하지 않는 값으로 p태그 생성
+            p. classList.add('word');   //클래스 워드 넣어준다. 
+            let txt = document.getElementById('txtWord'); //인풋 태그를 가지고와서 
+            p.innerHTML = txt.value;  //p태그안에 인풋태그에 있는 내용을 넣어준다. 
+            document.body.append(p);
+        }
+
+
+        // 그룹이벤트 : 클릭한 대상이 className 인 애들만 찍어준다. 
+
+        document.body.addEventListener('click',function(){
+            if(event.target.className == 'word'){
+                console.log(event.target.innerHTML);
+            }
+            //----------------------------------------this 개념 파악. 
+            console.log("this",this);   //이벤트를 걸어놓은 대상,바디
+            console.log("target", event.target); //클릭한 태그
+            console.log("currenrTarget", event.currentTarget); //이벤트를 걸어놓은 대상, this랑 같은 의미
+        })
+        
+        
+// --------------------------------------------------------------------------------
+
+//     // <!-- input태그 데이터존재 유무 확인  -->
+//     <form id="form" action="ss_practice.html" onsubmit="return fnSubmit()">
+//         <label>이름 <input type="text" name="userid" id="userid"></label><br>
+//         <button>submit</button>
+//     </form>
+
+
+//     <!-- comfirm을 활용해서 페이지 이동 물어보고 진행하는 이벤트 
+//     A태그에 이벤트를 거는 방법  -->
+//     <button type="button" id="btn" >button</button>
+//     <a href="http://www.naver.com" id="abtn">naver</a>
+
+//     <script>
+//         //
+//         let btn = document.getElementById('btn');
+//         btn.addEventListener('click', fncBtn);
+
+//         let aTag = document.getElementById("abtn");
+//         aTag.addEventListener('click', fncA);
+
+//         let forms = document.getElementById("form");
+//         forms.addEventListener('submit',fncForm);
+
+//         function fncForm(){
+//             let txt = document.getElementById('userid');
+//             if(txt.value == ''){
+//                 // return false;  폼태그에 온서브밋 리턴함수가 없어서 
+//             }
+               
+//         }
+
+//         function fncA(){
+//             if(!confirm);
+//             event.preventDefault();
+            
+//             form.submit();
+//         }
+
+
+//         //이벤트 작동방법  
+
+//         // 1) addEventListener
+
+//         // -> DOM 객체. addEventListener (동작,함수)
+//         // [동작이 되게되면 함수가 동작이 되는것]
+
+//         // 2) Tag onclick, onsubmit 적용 
+//         // -> <tag onclick="함수">
+//         // -> 해당 tag click 시 함수가 작동 (이벤트 발생)
+//         // -> form tag : return 가진 함수 (T/F submit 작동) 
+
+//         // 3) Tag onclick, onsubmit 적용 
+//         // -> <tag onclick = "바로 실행 될 기능">
+
+//         // 4) <script> 영역에 on 사용하여  Event 적용 
+//         // 1-> <script> 영역에서 DOM객체를 불러옵니다. 
+//         // 2-> 불러오 DOM객체. onclick or onsumbit 이벤트 추가 
+//         // 3-> onclick = function() { // 익명 함수로 기능을 구현 
+//         //                     } 
+
+
+
+            
+//     </script>
+
+// </body>
+// </html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            background: coral;
+        }
+    </style>
+</head>
+<body>
+    <h1>타이틀</h1>
+    <ul id="my-list">
+        <li class="list">리스트1</li>
+        <li class="list">리스트2</li>
+        <li class="list">리스트3</li>
+    </ul>
+    <div id="app">
+        <span id="child">2</span>
+    </div>
+    <script> //-------------------------------------------한번더-----------------------//
+        let myBox = document.querySelector('ul');
+        myBox.innerHTML = "안녕하세요";   //기존에 있던 li들을 안녕하세요로 변경.
+        //요소안에 html 내용을 넣는 방법. 
+
+        let list = document.querySelector('my-list');
+        let lists = document.querySelector('#my-list.list:nth-child(1)');  //css의 선택자. 
+                            //디테일하게 태그를 가져오는 것.  
+        console.log(lists);
+        //document.querySelectorAll('ul>li') //선택자 활용해 가져온느 방법.
+        let taglist = document.getElementsByTagName('li'); //태그를 가져오는 방법
+        console.log(taglist[0]);
+
+        //DOM 생성
+        let makeP = document.createElement('p');
+        // <div></div>
+        console.log(makeP);
+        //style, class, id, 내용(text)
+        let div = document.getElementById('app');
+       
+        makeP.textContent = 'P element입니다.';    //텍스트가 들어감. 
+    
+
+        div.appendChild(makeP);
+        console.log(div);
+        
+        //지우기 
+
+        div.removeChild(makeP);
+        console.log(div);
+
+        div.removeChild(document.getElementById('child'));
+        console.log(div);
+
+        //안의 텍스트 가져오기 
+
+        // let pTag = document.querySelector('#app p');  //텍스트 꺼내오기 
+        // console.log(pTag);
+
+        // let pText = pTag.textContent;   
+        // console.log(pText);    
+
+
+        //이미지태그 만들기 시작. 
+        let imgaTag = document.createElement('img');  //동적으로 태그를 사용할때,createElement
+
+        //이미지태그 
+        // let imgTag = document.createElement('img');
+
+        imgTag.setAttribute('src','미소강아지.jpg');
+        imgTag.setAttribute('alt','사진을 불러올수 없습니다.'); //사진을 불러오지 못할경우 출력해주는 내용. 
+        imgTag.setAttribute('style','width:30px')
+
+        console.log(imgTag);
+
+        let aTag = document.createElement('a');
+        // 1. src 이미지 엘리먼트 생성 2. alt 표현텍스트 넣기 3. a 태그만들기 4. steAttri를 통해 링크만들고 속성만들기 5. aTag(imgTag) > div(aTag) 자식 붙여주는 순서 중요 
+
+        aTag.setAttribute('href','https://naver.com'); //아직안보임 //setAttribute 스타일을 줄때 
+        // aTag.textContent = "네이버"; //텍스트 링크 들어가 이제 보임.  //textContent 텍스트 링크
+        aTag.setAttribute('style','color:red') //스타일 컬러 적용. 
+
+        div.appendChild(imgTag);
+
+        div.appendChild(aTag);
+
+        //꺼내보기 
+
+        let confirms = aTag.getAttribute('href');
+        console.log(confirms);
+
+        let spanTag = document.createElement('span');
+        
+        // <span style="color:blue">
+        spanTag.setAttribute('style','color:blue');
+        spanTag.textContent = "spanTag이에요.";
+        div.appendChild(spanTag); //자식들 맨밑에 
+
+
+        //class 추가, 삭제 
+        //className과 비슷 
+        div.classList.add('red'); 
+        div.classList.remove('red');                
+
+
+
+
+
+
+
+
+        
+      //상대경로 : 내위치 기준으로 경로찾기 컴퓨터 환경이 바껴도 읽을수 있음. (다른사람들이 사용했을때 내것을 사용할수 있을까 기준으로 )
+      // ./이미지  
+      
+      //절대경로 : 최상단에서 시작 경로 (살짝 위험) 왜? 컴퓨터 환경이 바뀌면 못읽음. 
+      // D:\html css\img
+    </script>
+</body>
+</html>
+
+
+

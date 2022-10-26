@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- form tag에서만 사용 가능한 event -->
+    <!-- submit 발생시, action에 있는 페이지로 이동 -->
+    <!-- <form id="form" action="ss_practice.html" onsubmit="alert('submit')"> -->
+        <!-- submit이라는 이벤트가 발생하면 action페이지로 이동하세요. -->
+        <!-- <label>이름 <input type="text" name="userid" id="userid"></label><br>
+        <button>submit</button>
+    </form> -->
+
+    <form id="form" action="ss_practice.html" onsubmit="return fnSubmit()">
+        <!-- submit이라는 이벤트가 발생하면 action페이지로 이동하세요. 
+        return 데이터를 돌려준다는 뜻. 빠지게 되면 submit의 데이터를 못돌려준다. 
+        지우게 되면 트루든 참이든 항상 참으로 인식하게 된다. -->
+
+        <label>이름 <input type="text" name="userid" id="userid"></label><br>
+        <button>submit</button>
+    </form>
+
+    <script>
+
+        //---------------on이벤트 
+
+        let form = document.getElementById('form');
+        form.onsubmit = function(){
+            let txt = document.getElementById('userid');
+            if(txt.value == ''){
+                return false;
+            }
+                return true;
+        }
+        //-------------------------------------------------------------
+
+        function fnSubmit(){
+            alert('submit');
+            let txt = document.getElementById('userid');
+            if(txt.value == ''){
+                console.log('no data');
+                //데이터가 존재하지 않기 때문에 submit을 작동시키지 않겠다. 
+                return false;
+                
+            }
+                //데이터가 존재하므로 submit을 작동하겠다. 
+                return true;
+        }
+    </script>
+            <!-- <button type="button" id="btn" onclick="fnButton()">button</button>
+
+            <a href="http://www.naver.com" id="abtn" onclick="fnA()">naver</a> -->
+
+
+            <!-- 인라인으로 할수있단느것 보여줌 ? -->
+
+            <!-- <button type="button" id="btn" onclick="let form = document.getElementById('form');
+            form.submit();">button</button>
+
+            <a href="http://www.naver.com" id="abtn" onclick="fnA()">naver</a> -->
+
+
+          <!-- 이벤트를 걸수있다? -->
+            <button type="button" id="btn">button</button>
+
+            <a href="http://www.naver.com" id="abtn" onclick="fnA()">naver</a>
+        
+            
+    <script>
+
+        let btn = document.getElementById('btn');
+        let aTag = document.getElementById('abtn');
+
+        btn.onclick = function(){ //익명함수 기능/ 온클릭시 주어지는것뿐 /껍데기 일회성 
+            form.submit();
+        }                     
+        
+        aTag.onclick = function(){
+            if(iconfirm('이동')){
+                event.preventDefault();
+            }
+        }
+
+        //form 태그 submit 이벤트 걸어주기
+        function fnButton(){
+            let form = document.getElementById('form');
+            form.submit();
+        }
+        
+        // function fnA(){
+        //     if(!confirm('이동?')){  //!는 not의 의미 확인이면 펄스 취소면 트루로 바꿔줌. 
+        //         event.preventDefault();  // preventDefault > 이벤트를 중단하겠다. 
+        //     }
+        // }
+
+
+        function btnFnc(){
+            console.log("버튼 클릭")
+        }
+    </script>
+</body>
+</html>
